@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
+use Database\Factories\HasFactory;
 class BlogFactory extends Factory
 {
     /**
