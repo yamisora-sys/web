@@ -7,7 +7,8 @@ class Blog extends Model
     use HasFactory;
     protected $fillable = [
         'post_title', 
-        'description'
+        'description',
+        'post_slug'
     ];
  
     public function getRouteKeyName()
