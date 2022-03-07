@@ -1,14 +1,3 @@
-<template>
-    <div class="container">
-        <div id="success" class="mb-3"></div>
-        
-       <a style="cursor: pointer" @click.prevent="dislikeBlog">
-           <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> 
-           ({{ allDislike }})
-       </a>
-    </div>
-</template>
- 
 <script>
     export default {
         props:['blog'],
@@ -32,6 +21,9 @@
                     console.log(res.data.blog.dislike)
                     this.allDislike = res.data.blog.dislike
                 })
+            },
+            thongbao(){
+                alert('Bạn đã thích bài viết này')
             }
         },
         mounted() {
@@ -39,3 +31,17 @@
         }
     }
 </script>
+
+<template>
+    <div class="container">
+        <div id="success" class="mb-3"></div>
+        <button v-on:click.prevent="allDislike++">
+            <a style="cursor: pointer" >
+           <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> 
+           ({{ allDislike }})
+       </a>
+        </button>
+       
+    </div>
+</template>
+ 

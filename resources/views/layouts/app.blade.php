@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script type= "text/javascript" src="{{ asset('js/app.js') }} "></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
@@ -77,10 +77,13 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4" id="app">
+    <div id="app">
+    <main class="py-4">
             @yield('content')
         </main>
     </div>
+        
+    </div>
 </body>
+
 </html>

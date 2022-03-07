@@ -5364,22 +5364,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['blog'],
   data: function data() {
     return {
-      allDislike: ''
+      allDislike: 0
     };
   },
   methods: {
@@ -5403,6 +5392,9 @@ __webpack_require__.r(__webpack_exports__);
         console.log(res.data.blog.dislike);
         _this2.allDislike = res.data.blog.dislike;
       });
+    },
+    thongbao: function thongbao() {
+      alert('Bạn đã thích bài viết này');
     }
   },
   mounted: function mounted() {
@@ -28153,22 +28145,23 @@ var render = function () {
     _c("div", { staticClass: "mb-3", attrs: { id: "success" } }),
     _vm._v(" "),
     _c(
-      "a",
+      "button",
       {
-        staticStyle: { cursor: "pointer" },
         on: {
           click: function ($event) {
             $event.preventDefault()
-            return _vm.dislikeBlog.apply(null, arguments)
+            _vm.allDislike++
           },
         },
       },
       [
-        _c("i", {
-          staticClass: "fa fa-thumbs-o-down",
-          attrs: { "aria-hidden": "true" },
-        }),
-        _vm._v(" \n       (" + _vm._s(_vm.allDislike) + ")\n   "),
+        _c("a", { staticStyle: { cursor: "pointer" } }, [
+          _c("i", {
+            staticClass: "fa fa-thumbs-o-down",
+            attrs: { "aria-hidden": "true" },
+          }),
+          _vm._v(" \n       (" + _vm._s(_vm.allDislike) + ")\n   "),
+        ]),
       ]
     ),
   ])
@@ -28215,7 +28208,8 @@ var render = function () {
           staticClass: "fa fa-thumbs-o-up",
           attrs: { "aria-hidden": "true" },
         }),
-        _vm._v("\n        (" + _vm._s(_vm.alllikes) + ")\n    "),
+        _vm._v(" "),
+        _c("small", [_vm._v("(" + _vm._s(_vm.alllikes) + ")")]),
       ]
     ),
   ])
